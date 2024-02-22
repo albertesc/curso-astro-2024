@@ -1,10 +1,12 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 const { article } = Astro.props;
 const { url, image, title, author, created_at, category, excerpt } = article;
+const { currentLocale } = Astro;
 ---
 
 <article>
-  <a href={url}>
+  <a href={getRelativeLocaleUrl(currentLocale, url)}>
     <img src={image} alt={title} class="rounded" />
   </a>
 
@@ -62,7 +64,7 @@ const { url, image, title, author, created_at, category, excerpt } = article;
     </span>
   </div>
 
-  <a href={url}>
+  <a href={getRelativeLocaleUrl(currentLocale, url)}>
     <h3
       class="block text-3xl hover:text-teal-500 font-bold py-4 transition duration-300"
     >
