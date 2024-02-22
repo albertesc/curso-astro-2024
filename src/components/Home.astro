@@ -2,11 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import { getI18N } from "@i18n/index.js";
+import { Accordion } from "@components/Accordion.jsx";
 
 const { currentLocale } = Astro; // 👈 Obtiene el locale actual
 const t = getI18N({ currentLocale }); // 👈 Obtiene las traducciones del locale actual
 
-/* 
+/* ARTICLOS ESTATICOS DE MARKDOWN
 const articles = await Astro.glob("./blog/*.md"); // 👈 Obtiene todos los archivos .md de la carpeta blog
 
 const mappedArticles = articles.map((article) => { // 👈 Mapea los archivos .md a un objeto con los datos necesarios
@@ -22,6 +23,7 @@ const mappedArticles = articles.map((article) => { // 👈 Mapea los archivos .m
 }); 
 */
 
+/* ARTICULOS DESDE UNA API */
 const articles = await fetch("http://localhost:4321/api/articles.json").then(
   (res) => res.json()
 ); // 👈 Obtiene los datos de un endpoint
@@ -30,13 +32,26 @@ const articles = await fetch("http://localhost:4321/api/articles.json").then(
 <Layout title="Welcome to Astro.">
   <h1 class="text-3xl font-bold text-center mb-8">{t.home.PAGE_TITLE}</h1>
 
-  <div class="grid grid-cols-2 gap-8">
-    {articles.map((article) => <Card article={article} />)}
-  </div>
-
-  <!--
+  <!-- ARTICLOS ESTATICOS DE MARKDOWN
     <div class="grid grid-cols-2 gap-8">
       {mappedArticles.map((article) => <Card article={article} />)}
     </div>
    -->
+
+  <!-- ARTICULOS DESE UNA API -->
+  <div class="grid grid-cols-2 gap-8">
+    {articles.map((article) => <Card article={article} />)}
+  </div>
+
+  <div class="my-10">
+    <!-- 👇 La directiva "client:visible" Se utiliza para cargar el JavaScript solo cuando el elemento sea visible  -->
+    <Accordion title="Why should you need to do this?" client:visible>
+      <p class="mt-4">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
+        obcaecati. Porro, recusandae similique! Quia accusamus, sint commodi
+        cupiditate minus cumque, nam sit mollitia unde temporibus ipsa ea,
+        laborum maiores architecto.
+      </p>
+    </Accordion>
+  </div>
 </Layout>

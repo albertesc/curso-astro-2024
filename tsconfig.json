@@ -1,17 +1,28 @@
 {
   "extends": "astro/tsconfigs/base",
-  
   "compilerOptions": {
-    //👇 Con esta configuración, podemos crear alias para los directorios de nuestro proyecto
-    "baseUrl": ".",
+    "baseUrl": "/Users/albert/Sites/curso-astro-2024",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"],
-      "@data/*": ["src/data/*"],
-      "@i18n/*": ["src/i18n/*"],
-      "@utils/*": ["src/utils/*"],
-    }
-    // --------------------------------------------------------------------------------------
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@i18n/*": [
+        "src/i18n/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "react"
   }
 }
