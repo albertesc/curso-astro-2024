@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/Button.astro";
+
+import { Image, Picture } from "astro:assets"; // 👈 Componetes de Astro sireve para optimizar las imagenes
+import image from "@assets/images/author.webp"; // 👈 Se puede importar la imagen directamente
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="flex gap-8">
+    <div>
+      <Picture
+        src={image}
+        widths={[240, 540, image.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${image.width}px`}
+        formats={["webp", "avif", "jpeg"]}
+        alt="Author"
+        class="rounded-lg"
+      />
+    </div>
+    <div class="prose">
+      <h1>Welcome to Astro</h1>
+      <p>
+        Astro is a new kind of static site builder that delivers lightning-fast
+        performance and modern developer productivity. It's the first framework
+        that's both built with your favorite JavaScript framework and generates
+        a fully static site that can deploy to any CDN.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+        nemo aliquam sit quae doloremque, provident excepturi magnam modi iusto,
+        quos veritatis aut. Numquam ducimus provident iusto perspiciatis
+        perferendis, cumque velit officia magni delectus dolor consequatur ea
+        veniam. Officia, vero voluptates!
+      </p>
+
+      <Button href="/" type="primary">Get in touch</Button>
+    </div>
+  </div>
+</Layout>

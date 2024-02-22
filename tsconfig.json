@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/base",
+  
+  "compilerOptions": {
+    //👇 Con esta configuración, podemos crear alias para los directorios de nuestro proyecto
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"],
+      "@data/*": ["src/data/*"],
+    }
+    // --------------------------------------------------------------------------------------
+  }
+}
