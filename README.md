@@ -3,7 +3,7 @@
 This is the project for the Astro course that will be taught on February 26 and 27, 2024.
 It is about the creation of a blog with internationalization and data fetching
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![screenshot](https://github.com/albertesc/curso-astro-2024/blob/main/public/images/screenshot.png)
 
 ## 🧞 Commands
 
