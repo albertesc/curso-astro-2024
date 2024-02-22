@@ -8,8 +8,10 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), vue()],
+
   //👇 Configuramos el renderizado estatico o no de la aplicaicón. Las opciones son "static", "server" o "hybrid"
-  output: "static",
+  output: "server",
+
   //👇 Configuramos el i18n
   i18n: {
     defaultLocale: 'en',
