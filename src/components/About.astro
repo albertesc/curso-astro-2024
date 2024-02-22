@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Button from "@components/Button.astro";
-import { Image, Picture } from "astro:assets"; // 👈 Componetes de Astro sireve para optimizar las imagenes
-import image from "@assets/images/author.webp"; // 👈 Se puede importar la imagen directamente
+//import { Image, Picture } from "astro:assets"; // 👈 Componetes de Astro sireve para optimizar las imagenes (se necesita adaptador del servicio)
+//import image from "@assets/images/author.webp"; // 👈 Se puede importar la imagen directamente (se necesita adaptador del servicio)
 
 import { getI18N } from "@i18n/index.js"; // 👈 Importamos la función para obtener la traducción
 
@@ -13,14 +13,7 @@ const t = getI18N({ currentLocale }); // 👈 Obtenemos las traducciones en el i
 <Layout title={t.about.SEO_TITLE}>
   <div class="flex gap-8">
     <div>
-      <Picture
-        src={image}
-        widths={[240, 540, image.width]}
-        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${image.width}px`}
-        formats={["webp", "avif", "jpeg"]}
-        alt="Author"
-        class="rounded-lg"
-      />
+      <img src="/images/author.webp" alt="Author" class="rounded-lg" />
     </div>
     <div class="prose">
       {

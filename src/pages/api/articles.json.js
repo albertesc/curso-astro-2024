@@ -4,7 +4,7 @@
 
 import data from '@data/articles.json';
 
-export const GET = ({ params, request }) => {
+export const GET = async ({ params, request }) => {
     const allArticles = data.articles; // 👈 Obtiene todos los articulos del .json o de cualquier API
 
     const mappedArticles = allArticles.map((article) => { // 👈 Mapea los articulos para que sean consumidos por el front-end

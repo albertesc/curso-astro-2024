@@ -4,7 +4,7 @@
 
 import data from '@data/articles.json';
 
-export const GET = ({ params, request }) => {
+export const GET = async ({ params, request }) => {
     const { id } = params; // 👈 Obtiene el id del articulo desde la url
     const articles = data.articles; // 👈 Obtiene todos los articulos del .json o de cualquier API
     const article = articles.find((article) => article.id === Number(id)); // 👈 Busca el articulo por su id

@@ -1,3 +1,0 @@
-Podemos poner aquí las fuentes para cagarlas en nuestro CSS
-
-ej. de ruta: "/fonts/nuestra-fuente.woff"
