@@ -26,10 +26,15 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={title}>
-  <article class="prose prose-xl mx-auto">
+  <article class="prose prose-xl mx-auto" transition:name=`post-${id}`>
     <h1>{title}</h1>
 
-    <img src={image} alt={title} class="rounded" />
+    <img
+      src={image}
+      alt={title}
+      class="rounded"
+      transition:name=`post-image-${id}`
+    />
 
     <div class="flex items-center gap-6">
       <span class="flex items-center gap-1 text-gray-400">

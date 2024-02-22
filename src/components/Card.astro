@@ -2,13 +2,23 @@
 import { getRelativeLocaleUrl } from "astro:i18n"; // 👈 Importamos la función que nos permite obtener la ruta relativa de la página en un idioma en concreto
 
 const { article } = Astro.props; // 👈 Obtenemos el artículo que se pasó como propiedad
-const { url, image, title, author, created_at, category, excerpt } = article; // 👈 Extraemos las propiedades del artículo
-const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual de la página en la que estamos
+
+//👇 Extraemos las propiedades del artículo
+const { id, url, image, title, author, created_at, category, excerpt } =
+  article;
+
+//👇 Obtenemos el idioma actual de la página en la que estamos
+const { currentLocale } = Astro;
 ---
 
-<article>
+<article transition:name=`post-${id}`>
   <a href={getRelativeLocaleUrl(currentLocale, url)}>
-    <img src={image} alt={title} class="rounded" />
+    <img
+      src={image}
+      alt={title}
+      class="rounded"
+      transition:name=`post-image-${id}`
+    />
   </a>
 
   <div class="flex items-center gap-6 mt-4">
