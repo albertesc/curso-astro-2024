@@ -1,8 +1,9 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-const { article } = Astro.props;
-const { url, image, title, author, created_at, category, excerpt } = article;
-const { currentLocale } = Astro;
+import { getRelativeLocaleUrl } from "astro:i18n"; // 👈 Importamos la función que nos permite obtener la ruta relativa de la página en un idioma en concreto
+
+const { article } = Astro.props; // 👈 Obtenemos el artículo que se pasó como propiedad
+const { url, image, title, author, created_at, category, excerpt } = article; // 👈 Extraemos las propiedades del artículo
+const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual de la página en la que estamos
 ---
 
 <article>

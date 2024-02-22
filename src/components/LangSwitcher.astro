@@ -1,10 +1,10 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { getRouteFromPathname } from "@utils/route.js";
+import { getRelativeLocaleUrl } from "astro:i18n"; // 👈 Importamos la función que nos permite obtener la ruta relativa de la página en un idioma en concreto
+import { getRouteFromPathname } from "@utils/route.js"; // 👈 Importamos la función que nos permite obtener la ruta limpia de la página
 
-const { currentLocale } = Astro;
-const currentPath = Astro.url.pathname;
-const currentRoute = getRouteFromPathname({ pathname: currentPath });
+const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual de la página en la que estamos
+const currentPath = Astro.url.pathname; // 👈 Obtenemos la ruta actual de la página en la que estamos
+const currentRoute = getRouteFromPathname({ pathname: currentPath }); // 👈 transformamos la ruta actual limpiando el idioma
 ---
 
 <nav>
@@ -12,6 +12,7 @@ const currentRoute = getRouteFromPathname({ pathname: currentPath });
     <li>
       <a
         class:list={[
+          // 👆 Agregamos una clase condicional para subrayar el idioma actual
           "text-lg",
           {
             underline: currentLocale === "en",
@@ -23,6 +24,7 @@ const currentRoute = getRouteFromPathname({ pathname: currentPath });
     <li>
       <a
         class:list={[
+          // 👆 Agregamos una clase condicional para subrayar el idioma actual
           "text-lg",
           {
             underline: currentLocale === "es",
