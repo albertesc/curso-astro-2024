@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/Button.astro";
+import { Image, Picture } from "astro:assets"; // 👈 Componetes de Astro sireve para optimizar las imagenes
+import image from "@assets/images/author.webp"; // 👈 Se puede importar la imagen directamente
+
+import { getI18N } from "@i18n/index.js"; // 👈 Importamos la función para obtener la traducción
+
+const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual de la página en que estamos
+const t = getI18N({ currentLocale }); // 👈 Obtenemos las traducciones en el idioma actual
+---
+
+<Layout title={t.about.SEO_TITLE}>
+  <div class="flex gap-8">
+    <div>
+      <Picture
+        src={image}
+        widths={[240, 540, image.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${image.width}px`}
+        formats={["webp", "avif", "jpeg"]}
+        alt="Author"
+        class="rounded-lg"
+      />
+    </div>
+    <div class="prose">
+      {
+        /* 👇 Usamos las traducciones para mostrar el contenido en el idioma actual */
+      }
+      <h1>{t.about.PAGE_TITLE}</h1>
+      <p>
+        {t.about.PAGE_TEXT_01}
+      </p>
+      <p>
+        {t.about.PAGE_TEXT_02}
+      </p>
+
+      <Button href="/" type="primary">{t.about.BUTTON_CTA}</Button>
+    </div>
+  </div>
+</Layout>

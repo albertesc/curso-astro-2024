@@ -1,3 +1,47 @@
-<li><a class="text-lg" href="/">Home</a></li>
-<li><a class="text-lg" href="/about">About</a></li>
-<li><a class="text-lg" href="/elements">Elements</a></li>
+---
+import { getRelativeLocaleUrl } from "astro:i18n"; // 👈 Importamos la función que nos permite obtener la ruta relativa de la página en un idioma en concreto
+import { getI18N } from "@i18n/index"; // 👈 Importamos la función para obtener las traducciones
+
+const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual
+const currentPath = Astro.url.pathname; // 👈 Obtenemos la ruta actual
+const isBlog = currentPath.includes("articles"); // 👈 Verificamos si estamos en la sección de blog
+const t = getI18N({ currentLocale }); // 👈 Obtenemos las traducciones
+---
+
+<li>
+  <a
+    class:list={[
+      "text-lg",
+      {
+        underline:
+          currentPath === getRelativeLocaleUrl(currentLocale, "/") || isBlog,
+      },
+    ]}
+    href={getRelativeLocaleUrl(currentLocale, "/")}>{t.navigation.HOME}</a
+  >
+</li>
+<li>
+  <a
+    class:list={[
+      "text-lg",
+      {
+        underline:
+          currentPath === getRelativeLocaleUrl(currentLocale, "/about"),
+      },
+    ]}
+    href={getRelativeLocaleUrl(currentLocale, "/about")}>{t.navigation.ABOUT}</a
+  >
+</li>
+<li>
+  <a
+    class:list={[
+      "text-lg",
+      {
+        underline:
+          currentPath === getRelativeLocaleUrl(currentLocale, "/elements"),
+      },
+    ]}
+    href={getRelativeLocaleUrl(currentLocale, "/elements")}
+    >{t.navigation.ELEMENTS}</a
+  >
+</li>

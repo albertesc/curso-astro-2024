@@ -1,0 +1,20 @@
+{
+    "navigation": {
+        "HOME": "Principal",
+        "ABOUT": "Sobre Astro",
+        "ELEMENTS": "Elementos"
+    },
+    "home": {
+        "SEO_TITLE": "Astro - La forma más rápida de construir sitios web modernos",
+        "SEO_DESCRIPTION": "Astro es un nuevo tipo de constructor de sitios estáticos que ofrece un rendimiento ultrarrápido y una productividad de desarrollador moderna. Es el primer marco que está construido con su marco de JavaScript favorito y genera un sitio completamente estático que se puede implementar en cualquier CDN.",
+        "PAGE_TITLE": "Articulos recientes"
+    },
+    "about": {
+        "SEO_TITLE": "Bienvendio a Astro",
+        "SEO_DESCRIPTION": "Astro es un nuevo tipo de constructor de sitios estáticos que ofrece un rendimiento ultrarrápido y una productividad de desarrollador moderna. Es el primer marco que está construido con su marco de JavaScript favorito y genera un sitio completamente estático que se puede implementar en cualquier CDN.",
+        "PAGE_TITLE": "Bienvenido a Astro",
+        "PAGE_TEXT_01": "Astro es un nuevo tipo de constructor de sitios estáticos que ofrece un rendimiento ultrarrápido y una productividad de desarrollador moderna. Es el primer marco que está construido con su marco de JavaScript favorito y genera un sitio completamente estático que se puede implementar en cualquier CDN.",
+        "PAGE_TEXT_02": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nemo aliquam sit quae doloremque, provident excepturi magnam modi iusto, quos veritatis aut. Numquam ducimus provident iusto perspiciatis perferendis, cumque velit officia magni delectus dolor consequatur ea veniam. Officia, vero voluptates!",
+        "BUTTON_CTA": "Leer más"
+    }
+}

@@ -1,10 +1,13 @@
 ---
-const { article } = Astro.props;
-const { url, image, title, author, created_at, category, excerpt } = article;
+import { getRelativeLocaleUrl } from "astro:i18n"; // 👈 Importamos la función que nos permite obtener la ruta relativa de la página en un idioma en concreto
+
+const { article } = Astro.props; // 👈 Obtenemos el artículo que se pasó como propiedad
+const { url, image, title, author, created_at, category, excerpt } = article; // 👈 Extraemos las propiedades del artículo
+const { currentLocale } = Astro; // 👈 Obtenemos el idioma actual de la página en la que estamos
 ---
 
 <article>
-  <a href={url}>
+  <a href={getRelativeLocaleUrl(currentLocale, url)}>
     <img src={image} alt={title} class="rounded" />
   </a>
 
@@ -62,7 +65,7 @@ const { url, image, title, author, created_at, category, excerpt } = article;
     </span>
   </div>
 
-  <a href={url}>
+  <a href={getRelativeLocaleUrl(currentLocale, url)}>
     <h3
       class="block text-3xl hover:text-teal-500 font-bold py-4 transition duration-300"
     >

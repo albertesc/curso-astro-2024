@@ -1,0 +1,42 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+import { getI18N } from "@i18n/index.js";
+
+const { currentLocale } = Astro; // 👈 Obtiene el locale actual
+const t = getI18N({ currentLocale }); // 👈 Obtiene las traducciones del locale actual
+
+/* 
+const articles = await Astro.glob("./blog/*.md"); // 👈 Obtiene todos los archivos .md de la carpeta blog
+
+const mappedArticles = articles.map((article) => { // 👈 Mapea los archivos .md a un objeto con los datos necesarios
+  return {
+    title: article.frontmatter.title,
+    excerpt: article.frontmatter.excerpt,
+    image: article.frontmatter.image,
+    author: article.frontmatter.author,
+    created_at: article.frontmatter.created_at,
+    category: article.frontmatter.category,
+    url: article.url,
+  };
+}); 
+*/
+
+const articles = await fetch("http://localhost:4321/api/articles.json").then(
+  (res) => res.json()
+); // 👈 Obtiene los datos de un endpoint
+---
+
+<Layout title="Welcome to Astro.">
+  <h1 class="text-3xl font-bold text-center mb-8">{t.home.PAGE_TITLE}</h1>
+
+  <div class="grid grid-cols-2 gap-8">
+    {articles.map((article) => <Card article={article} />)}
+  </div>
+
+  <!--
+    <div class="grid grid-cols-2 gap-8">
+      {mappedArticles.map((article) => <Card article={article} />)}
+    </div>
+   -->
+</Layout>

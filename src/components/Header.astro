@@ -1,13 +1,18 @@
 ---
 import Menu from "@components/Menu.astro";
+import LangSwitcher from "@components/LangSwitcher.astro";
 ---
 
 <header class="container flex justify-between items-center py-6">
-  <h1 class="text-4xl text-teal-500 font-bold">Astro Blog</h1>
+  <h1 class="text-4xl text-teal-500 font-bold">
+    <a href="/">Astro Blog</a>
+  </h1>
 
   <nav>
     <ul class="flex items-center gap-6">
       <Menu />
     </ul>
   </nav>
+
+  <LangSwitcher />
 </header>

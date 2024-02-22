@@ -1,0 +1,20 @@
+{
+    "navigation": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "ELEMENTS": "Elements"
+    },
+    "home": {
+        "SEO_TITLE": "Astro - The Future of Static Sites",
+        "SEO_DESCRIPTION": "Astro is a new kind of static site builder that delivers lightning-fast performance and modern developer productivity. It's the first framework that's both built with your favorite JavaScript framework and generates a fully static site that can deploy to any CDN.",
+        "PAGE_TITLE": "Latest Articles"
+    },
+    "about": {
+        "SEO_TITLE": "Welcome to Astro",
+        "SEO_DESCRIPTION": "Astro is a new kind of static site builder that delivers lightning-fast performance and modern developer productivity. It's the first framework that's both built with your favorite JavaScript framework and generates a fully static site that can deploy to any CDN.",
+        "PAGE_TITLE": "Welcome to Astro",
+        "PAGE_TEXT_01": "Astro is a new kind of static site builder that delivers lightning-fast performance and modern developer productivity. It's the first framework that's both built with your favorite JavaScript framework and generates a fully static site that can deploy to any CDN.",
+        "PAGE_TEXT_02": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nemo aliquam sit quae doloremque, provident excepturi magnam modi iusto, quos veritatis aut. Numquam ducimus provident iusto perspiciatis perferendis, cumque velit officia magni delectus dolor consequatur ea veniam. Officia, vero voluptates!",
+        "BUTTON_CTA": "Get In Touch"
+    }
+}

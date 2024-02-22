@@ -1,6 +1,6 @@
-# Astro course
+# Astro course 2024
 
-This is the project for the Astro course that will be taught on February 26 and 27, 2024.
+>This is the project for the Astro course that will be taught on February 26 and 27, 2024.
 It is about the creation of a blog with internationalization and data fetching
 
 ![screenshot](https://github.com/albertesc/curso-astro-2024/blob/main/public/images/screenshot.png)
