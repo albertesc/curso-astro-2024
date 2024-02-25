@@ -27,7 +27,8 @@ export const GET = async ({ params, request }) => {
   export const prerender = false;
 */
 
-/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto  */
+/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto  
 export function getStaticPaths() {
     return data.articles.map((article) => ({ params: { id: article.id.toString() } }));
 }
+*/
