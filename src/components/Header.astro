@@ -1,16 +1,13 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
 import Menu from "@components/Menu.astro";
 import LangSwitcher from "@components/LangSwitcher.astro";
-
-const currentLocale = Astro.currentLocale;
 ---
 
 <header
   class="container gap-3 flex flex-col lg:flex-row justify-between items-center py-6"
 >
   <h1 class="text-4xl text-teal-500 font-bold">
-    <a href={getRelativeLocaleUrl(currentLocale, "/")}>Astro Blog</a>
+    <a href="/">Astro Blog</a>
   </h1>
 
   <nav>
