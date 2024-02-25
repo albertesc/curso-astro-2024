@@ -4,9 +4,9 @@ import { marked } from "marked";
 
 const { id } = Astro.params; // 👈 Obtiene el parámetro de la URL
 
-const article = await fetch(
-  `http://localhost:4321/api/article/${id}.json`
-).then((res) => res.json()); // 👈 Obtiene el artículo por su ID desde un endpoint
+const article = await fetch(`/api/article/${id}.json`).then((res) =>
+  res.json()
+); // 👈 Obtiene el artículo por su ID desde un endpoint
 
 const { title, image, author, created_at, category, content } = article; // 👈 Extrae los datos del artículo
 const textContent = marked.parse(content); // 👈 Convierte el contenido de estilo markdown a HTML
