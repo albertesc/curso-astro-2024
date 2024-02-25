@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "/Users/albert/Sites/curso-astro-2024",
+    "baseUrl": ".",
     "paths": {
       "@components/*": [
         "src/components/*"
