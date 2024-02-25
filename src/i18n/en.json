@@ -7,7 +7,9 @@
     "home": {
         "SEO_TITLE": "Astro - The Future of Static Sites",
         "SEO_DESCRIPTION": "Astro is a new kind of static site builder that delivers lightning-fast performance and modern developer productivity. It's the first framework that's both built with your favorite JavaScript framework and generates a fully static site that can deploy to any CDN.",
-        "PAGE_TITLE": "Latest Articles"
+        "PAGE_TITLE": "Latest Articles",
+        "PAGE_GREETING_TEXT": "Welcome ",
+        "PAGE_NOTLOGIN_TEXT": "For viewing the latest articles, please login."
     },
     "about": {
         "SEO_TITLE": "Welcome to Astro",

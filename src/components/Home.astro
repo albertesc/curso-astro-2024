@@ -27,21 +27,29 @@ const mappedArticles = articles.map((article) => { // 👈 Mapea los archivos .m
 const articles = await fetch("http://localhost:4321/api/articles.json").then(
   (res) => res.json()
 ); // 👈 Obtiene los datos de un endpoint
+
+import { getSession } from "auth-astro/server";
+const session = await getSession(Astro.request);
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1 class="text-3xl font-bold text-center mb-8">{t.home.PAGE_TITLE}</h1>
-
-  <!-- ARTICLOS ESTATICOS DE MARKDOWN
-    <div class="grid grid-cols-2 gap-8">
-      {mappedArticles.map((article) => <Card article={article} />)}
-    </div>
-   -->
-
-  <!-- ARTICULOS DESE UNA API -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    {articles.map((article) => <Card article={article} />)}
-  </div>
+  {
+    session ? (
+      <>
+        <p class="text-center text-teal-500 text-3xl mb-8">
+          {t.home.PAGE_GREETING_TEXT} {session.user.name.split(" ")[0]}!
+        </p>
+        <h1 class="text-3xl font-bold text-center mb-8">{t.home.PAGE_TITLE}</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {articles.map((article) => (
+            <Card article={article} />
+          ))}
+        </div>
+      </>
+    ) : (
+      <p class="text-center">{t.home.PAGE_NOTLOGIN_TEXT}</p>
+    )
+  }
 
   <div class="my-10">
     <!-- 👇 La directiva "client:visible" Se utiliza para cargar el JavaScript solo cuando el elemento sea visible  -->

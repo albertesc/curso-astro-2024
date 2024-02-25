@@ -1,19 +1,21 @@
 ---
 interface Props {
   // 👆 definimos las props que recibirá el componente
+  id?: string;
   href: string;
   type: "primary" | "secondary";
   size?: "small" | "large"; // 👈 "size" es opcional con el "?"
 }
 
-const { href, type, size } = Astro.props; // 👈 desestructuramos las props
+const { id, href, type, size } = Astro.props; // 👈 desestructuramos las props
 ---
 
 <a
+  id={id}
   href={href}
   class:list={[
     // 👆 "class:list" sirve para concatenar clases y crear estilos condicionales
-    "no-underline px-6 py-3 text-white rounded-lg mt-3 inline-flex items-center gap-2 transition",
+    "no-underline px-6 py-3 text-white rounded-lg inline-flex items-center gap-2 transition",
     { "bg-teal-500 hover:bg-teal-600": type === "primary" }, // La clase "bg-teal-500" se aplicará si "type" es "primary"
     { "bg-gray-500 hover:bg-gray-600": type === "secondary" }, // La clase "bg-gray-500" se aplicará si "type" es "secondary"
     { "text-sm": size === "small" }, // La clase "text-sm" se aplicará si "size" es "small"

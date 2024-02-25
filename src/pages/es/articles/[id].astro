@@ -15,7 +15,7 @@ const textContent = marked.parse(content); // 👈 Convierte el contenido de est
   export const prerender = false;
 */
 
-/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto */
+/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto
 export async function getStaticPaths() {
   const posts = await fetch("http://localhost:4321/api/articles.json").then(
     (res) => res.json()
@@ -23,6 +23,7 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({ params: { id: post.id } }));
 }
+*/
 ---
 
 <Layout title={title}>

@@ -2,17 +2,17 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
+import auth from "auth-astro";
 
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), vue()],
-
+  integrations: [tailwind(), react(), vue(), auth()],
   //👇 Configuramos el renderizado estatico o no de la aplicaicón. Las opciones son "static", "server" o "hybrid"
   //   Cuando utilizamos "server" o "hybrid" vamos a tener que instalar un adaptador para el servidor que vamos a utilizar
   //   Más información en https://docs.astro.build/es/guides/server-side-rendering/
-  output: "static",
-
+  output: "server",
   //👇 Configuramos el i18n
   i18n: {
     defaultLocale: 'en',
@@ -25,10 +25,10 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false // 👈 en caso de poner true, la ruta por defecto será "/en"
     },
-
     // 👇 Configuramos el fallback de los idiomas
     fallback: {
       'es': 'en' // 👈 en caso de que no se encuentre una ruta en español, se redirigirá a la ruta en inglés
     }
-  }
+  },
+  adapter: vercel()
 });
