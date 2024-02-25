@@ -42,16 +42,4 @@ const articles = await fetch("http://localhost:4321/api/articles.json").then(
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
     {articles.map((article) => <Card article={article} />)}
   </div>
-
-  <div class="my-10">
-    <!-- 👇 La directiva "client:visible" Se utiliza para cargar el JavaScript solo cuando el elemento sea visible  -->
-    <Accordion title="Why should you need to do this?" client:visible>
-      <p class="mt-4">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
-        obcaecati. Porro, recusandae similique! Quia accusamus, sint commodi
-        cupiditate minus cumque, nam sit mollitia unde temporibus ipsa ea,
-        laborum maiores architecto.
-      </p>
-    </Accordion>
-  </div>
 </Layout>

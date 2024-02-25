@@ -4,7 +4,7 @@ import { marked } from "marked";
 
 const { id } = Astro.params; // 👈 Obtiene el parámetro de la URL
 
-const article = await fetch(`/api/article/${id}.json`).then((res) =>
+const article = await fetch(`./api/article/${id}.json`).then((res) =>
   res.json()
 ); // 👈 Obtiene el artículo por su ID desde un endpoint
 
