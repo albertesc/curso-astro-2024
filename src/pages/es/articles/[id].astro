@@ -4,9 +4,9 @@ import { marked } from "marked";
 
 const { id } = Astro.params; // 👈 Obtiene el parámetro de la URL
 
-const article = await fetch(`./api/article/${id}.json`).then((res) =>
-  res.json()
-); // 👈 Obtiene el artículo por su ID desde un endpoint
+const article = await fetch(
+  `http://localhost:4321/api/article/${id}.json`
+).then((res) => res.json()); // 👈 Obtiene el artículo por su ID desde un endpoint
 
 const { title, image, author, created_at, category, content } = article; // 👈 Extrae los datos del artículo
 const textContent = marked.parse(content); // 👈 Convierte el contenido de estilo markdown a HTML
@@ -15,7 +15,7 @@ const textContent = marked.parse(content); // 👈 Convierte el contenido de est
   export const prerender = false;
 */
 
-/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto 
+/* 👇 Cuando la configuracion del poryecto es "static". Obtiene las rutas de los artículos para el build del proyecto */
 export async function getStaticPaths() {
   const posts = await fetch("http://localhost:4321/api/articles.json").then(
     (res) => res.json()
@@ -23,7 +23,6 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({ params: { id: post.id } }));
 }
-*/
 ---
 
 <Layout title={title}>
