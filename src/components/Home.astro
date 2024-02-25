@@ -39,7 +39,7 @@ const articles = await fetch("http://localhost:4321/api/articles.json").then(
    -->
 
   <!-- ARTICULOS DESE UNA API -->
-  <div class="grid grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
     {articles.map((article) => <Card article={article} />)}
   </div>
 
